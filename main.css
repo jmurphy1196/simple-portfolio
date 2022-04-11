@@ -454,9 +454,6 @@ section {
 .project__card__meta h3 {
   color: var(--secondary-color);
 }
-.project__card__meta ul {
-  list-style: none;
-}
 
 .contact-me {
   background-color: var(--main-bg-color);
@@ -637,4 +634,27 @@ section {
   .contact-me form {
     width: 100%;
   }
+}
+@media only screen and (max-width: 1500px) {
+  html {
+    font-size: 62%;
+  }
+  .about-me {
+    padding: 0 5rem;
+  }
+  .projects {
+    padding: 0 5rem;
+  }
+  .tools-education {
+    padding: 0 5rem;
+    padding-bottom: 2rem;
+  }
+  .project__card {
+    padding: 2rem;
+    width: calc(100vw - 10rem);
+  }
+  .project__card__img__container {
+    width: 60%;
+  }
+  
 }
