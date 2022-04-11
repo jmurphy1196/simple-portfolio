@@ -9,21 +9,19 @@ let activeProjectCard = 0;
 
 console.log(mobileNavLinks);
 
-mobileNavBar.addEventListener("click", () => {
+const toggleMobileMenu = () => {
   mobileNavBarOpen = !mobileNavBarOpen;
-  console.log(mobileNavBarOpen);
   if (!mobileNavBarOpen) {
     mobileNavBarMenu.style.transform = "translateX(100%)";
   } else {
     mobileNavBarMenu.style.transform = "translateX(0%)";
   }
-});
+};
+
+mobileNavBar.addEventListener("click", toggleMobileMenu);
 
 mobileNavLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileNavBarOpen = !mobileNavBarOpen;
-    mobileNavBarMenu.style.transform = "translateX(100%)";
-  });
+  link.addEventListener("click", toggleMobileMenu);
 });
 
 projectTabs.forEach((tab, ind) => {
