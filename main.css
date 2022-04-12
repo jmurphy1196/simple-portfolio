@@ -450,6 +450,7 @@ section {
 }
 .project__card__img__container {
   color: var(--main-bg-color);
+  width: 75%;
 }
 .project__card__img__container img {
   width: 100%;
