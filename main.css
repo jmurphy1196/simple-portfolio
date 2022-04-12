@@ -613,8 +613,8 @@ section {
   nav .navbar__menu-container {
     display: flex;
   }
-  .hero__content {
-    max-width: 90%;
+  .hero {
+    padding: 0;
   }
   .hero__img-container {
     width: 60%;
