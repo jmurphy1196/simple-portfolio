@@ -148,7 +148,9 @@ section {
   align-items: center;
   justify-content: center;
   color: var(--primary-light-color);
+  margin-top: 7rem;
 }
+
 
 .hero__img-container {
   width: 20%;
@@ -158,9 +160,12 @@ section {
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 300;
+  margin-bottom: 3rem;
 }
 .hero__img-container img {
   width: 100%;
+  border-radius: 60%;
+
 }
 
 .hero__content {
@@ -607,6 +612,10 @@ section {
   html {
     font-size: 55%;
   }
+  nav {
+    padding: 0.5rem 2rem;
+    align-items: center;
+  }
   nav ul {
     display: none;
   }
@@ -614,6 +623,7 @@ section {
     display: flex;
   }
   .hero {
+    margin-top: 4.5rem;
     padding: 0;
   }
   .hero__img-container {
