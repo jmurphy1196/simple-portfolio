@@ -7,6 +7,30 @@ const mobileNavLinks = Array(...document.querySelectorAll(".mobile-nav-link"));
 let mobileNavBarOpen = false;
 let activeProjectCard = 0;
 
+let heroTimeline = gsap.timeline();
+
+let heroImg = gsap.fromTo(
+  ".hero__img-container",
+  { opacity: 0, y: 100 },
+  { duration: 0.8, opacity: 1, y: 0 }
+);
+
+let heroText = gsap.fromTo(
+  ".hero__content",
+  { opacity: 0, x: -25 },
+  { duration: 0.5, opacity: 1, x: 0 }
+);
+
+let heroBtns = gsap.fromTo(
+  ".hero__cta",
+  { opacity: 0, y: 50 },
+  { duration: 1, opacity: 1, y: 0 }
+);
+
+heroTimeline.add(heroImg);
+heroTimeline.add(heroText);
+heroTimeline.add(heroBtns);
+
 console.log(mobileNavLinks);
 
 const toggleMobileMenu = () => {
