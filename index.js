@@ -74,11 +74,13 @@ const formData = {
   email: "",
   phone: "",
   subject: "",
-  body: "",
+  text: "",
 };
 
+const form = document.querySelector(".contact-me__form");
 const inputs = Array(...document.querySelectorAll(".contact-me__form__input"));
 const bodyInput = document.querySelector(".contact-me__form__area");
+const formButton = document.getElementById("contact-me-submit-btn");
 
 inputs.forEach((input) => {
   input.addEventListener("input", () => {
@@ -87,6 +89,33 @@ inputs.forEach((input) => {
 });
 
 bodyInput.addEventListener("input", () => {
-  formData[bodyInput.name] = bodyInput.value;
-  console.log(formData);
+  formData.text = bodyInput.value;
+});
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  try {
+    formButton.innerText = "Sending...";
+    formButton.disabled = true;
+    const response = await fetch(
+      "https://zc4hylmisi7csj7bk3nrzvag7a0wmmbr.lambda-url.us-west-1.on.aws/",
+      {
+        method: "POST",
+        body: JSON.stringify(formData),
+        mode: "no-cors",
+      }
+    );
+    formButton.innerText = "Submit";
+    formButton.disabled = false;
+  } catch (err) {
+    console.log(err);
+  }
+
+  inputs.forEach((input) => {
+    input.value = "";
+    formData[input.name] = "";
+  });
+  bodyInput.value = "";
+  formData.text = "";
 });
