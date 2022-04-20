@@ -68,3 +68,25 @@ projectTabs.forEach((tab, ind) => {
     }
   });
 });
+
+const formData = {
+  name: "",
+  email: "",
+  phone: "",
+  subject: "",
+  body: "",
+};
+
+const inputs = Array(...document.querySelectorAll(".contact-me__form__input"));
+const bodyInput = document.querySelector(".contact-me__form__area");
+
+inputs.forEach((input) => {
+  input.addEventListener("input", () => {
+    formData[input.name] = input.value;
+  });
+});
+
+bodyInput.addEventListener("input", () => {
+  formData[bodyInput.name] = bodyInput.value;
+  console.log(formData);
+});
