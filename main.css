@@ -154,6 +154,7 @@ section {
 
 .hero__img-container {
   width: 20%;
+  position: relative;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -166,6 +167,9 @@ section {
   border-radius: 60%;
 
 }
+ .hero__img-container span {
+   padding: 1rem;
+ }
 
 .hero__content {
   font-size: 2rem;
@@ -487,10 +491,17 @@ section {
 
 .project__card .project__card__meta {
   padding-left: 1.5rem;
+  max-width: 30%;
+}
+
+.project__card__meta span {
+  font-size: 2rem;
+  font-weight: 200;
 }
 
 .project__card__meta h3 {
   color: var(--secondary-color);
+
 }
 
 .contact-me {
@@ -624,6 +635,9 @@ section {
   .project__card__img__container {
     width: 100%;
   }
+  .project__card .project__card__meta {
+    max-width: 90%;
+  }
   .contact-me {
     padding: 0 2rem;
   }
@@ -702,6 +716,7 @@ section {
     padding: 2rem;
     width: 100vw;
   }
+
   .project__card__img__container {
     width: 100%;
   }
